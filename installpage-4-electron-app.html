@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>                                                        
+  <head>                                                                                                 
+    <meta charset="UTF-8">                                                                                                 
+    <!-- import CSS -->                                                                                                                    
+    <link rel="stylesheet" href="https://unpkg.com/element-ui@2.4.8/lib/theme-chalk/index.css">                                                                                                 
+    <!-- <link rel="stylesheet" href="https://unpkg.com/element-ui/lib/theme-chalk/index.css"> -->                                                                                                                    
+    <title>Install 4 electron app                                                                                               
+    </title>                                                                                                 
+    <meta name="description" content="Install Page 4 electron app">                                                                                                 
+    <meta name="author" content="Robert Halter">                                                                                                 
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">                                                                                                 
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">                                                                                
+    <style>body { font-family: Arial, Helvetica, sans-serif; } .appname { font-size: 24px; } .el-row {     margin-bottom: 20px;     &:last-child {       margin-bottom: 0;     }   }                                                             
+    </style>                                         
+  </head>                                                        
+  <body>                                                                                              
+    <!-- import JavaScript -->                                       
+<script src="https://unpkg.com/vue@2.5.17/dist/vue.js"></script>                                                                                           
+    <!-- <script src="https://unpkg.com/vue/dist/vue.js"></script> -->                                       
+<script src="https://unpkg.com/element-ui@2.4.8/lib/index.js"></script>                                                                                                                
+    <!-- <script src="https://unpkg.com/element-ui/lib/index.js"></script> -->                                                                                         
+    <div id="app">                                                                                        
+      <el-container>                                                                                                                
+        <el-header>                                                                                                                                                                                
+          <el-menu :default-active="activeIndex" class="el-menu" mode="horizontal" @select="handleSelect">                                                                                                                                                                                                             
+            <el-menu-item index="1">                                                                                         
+              <div class="appname">my Electron App                                                                                          
+              </div>                                                                                                                                                                                                         
+            </el-menu-item>                                                                                                                                                                                                             
+            <el-menu-item index="2">Install                                                                                                                                                                                                         
+            </el-menu-item>                                                                                                                                                                                                             
+            <el-menu-item index="3">Features                                                                                                                                                                                                         
+            </el-menu-item>                                                                                                                                                                                         
+            <el-menu-item index="4">Release notes                                                                                                                                                                                                         
+            </el-menu-item>                                                                                                                                                                           
+          </el-menu>                                                                                                                                                                           
+          <div class="line">                                                                                                                                                                      
+          </div>                                                                                                                  
+        </el-header>                                                                                                                  
+        <el-main>                                                                                                           
+          <el-row>                                                                                                                       
+            <el-col>                                                                          
+              <span>Install                                                                           
+              </span>                                                                          
+              <span class="appname">my Electron App                                                                           
+              </span>                                                                
+            </el-col>                                                                                                  
+          </el-row>                                                                                                           
+          <el-row>                                                                                                                       
+            <el-col>                                                                                                                                        
+              <a :href="filenameUrl">                
+                <el-button type="primary" icon="el-icon-download">Install                 
+                </el-button></a>                                                                                                                                                                                                                                                                                                                   
+            </el-col>                                                                                                  
+          </el-row>                                                                                           
+        </el-main>                                                                                          
+      </el-container>                                                                                    
+    </div>                           
+<script>
+    var Main = {
+    data() {
+      return {
+        activeIndex: '1',
+        filenameUrl: 'App.exe',
+        filenameComment: 'Download Link to the Exe File as a URL',
+      };
+    },
+    methods: {
+      handleSelect(key, keyPath) {
+        console.log(key, keyPath)
+      }
+    }
+  }
+// create constructor
+const MyConstructor = Vue.extend(Main)
+new MyConstructor().$mount('#app')
+    </script>                                                                             
+  </body>
+</html>
